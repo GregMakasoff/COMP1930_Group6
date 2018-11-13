@@ -1,0 +1,46 @@
+p{
+	text-align: center;
+}
+h1{
+	text-align: center;
+
+	padding-top:1em;
+}
+h2{
+	text-align: center;
+}
+
+body{
+	background-color: beige;
+	font-family: monospace;
+}
+
+#about{
+	border-style: dashed;
+	border-width: 10px;
+	border-color: grey;
+	background-color: #ffccd4;
+	padding: 20px;
+    width: 50%;
+    margin: 0 auto;
+}
+
+#homeImage{
+    margin-left:auto;
+    margin-right:auto;
+	width: 300px;
+}
+
+.homeButton{
+	border-radius: 5px;
+	border-width: 5px;
+	padding: 10px;
+	font-size: 25px;
+    margin-bottom:10px;
+    width:300px;
+}
+#buttonContainer{
+	width: 305px;
+	margin: 0 auto;
+    text-align:center;
+}

@@ -1,0 +1,109 @@
+p{
+	text-align: center;
+}
+h1{
+	text-align: center;
+	text-decoration: underline;
+}
+h2{
+	text-align: center;
+}
+
+body{
+	background-color: beige;
+	font-family: monospace;
+}
+#header{
+    width: 45%;
+    display: inline-block;
+    margin-left: 50px;
+}
+.dropdown{
+    width: 20%;
+    float: right;
+}
+.matchProfile{
+    width: 75%;
+    height: 350px;
+    border-style: dashed;
+    border-width: 10px;
+    border-color: darkgrey;
+    margin: 0 auto;
+    margin-top: 10px;
+
+}
+.profileImage{
+    width:30%;
+    height:90%;
+    background-color: pink;
+    float: left;
+    margin: 10px;
+}
+.profileContent{
+    width:45%;
+    height:90%;
+    background-color: teal;
+    display: inline-block;
+    margin: 10px;
+}
+.contactButton{
+    float: right;
+    width: 15%;
+    margin-top: 25px;
+}
+.contact{
+    font-size: 25px;
+}
+#buttonWrapper{
+    text-align: center;
+    margin-top: 10px;
+}
+#show{
+    font-size: 15px;
+    width: 100px;
+}
+
+/* Dropdown Button */
+.dropbtn {
+    background-color: #3498DB;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #2980B9;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}

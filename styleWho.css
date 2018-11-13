@@ -1,0 +1,25 @@
+
+h1{
+	text-align: center;
+	text-decoration: underline;
+	padding-top:1em;
+}
+h2{
+	text-align: center;
+}
+
+body{
+	background-color: beige;
+	font-family: monospace;
+}
+.button{
+	border-radius: 5px;
+	border-width: 5px;
+	padding: 10px;
+    font-size: 25px;
+    width: 200px;
+}
+#buttonContainer{
+	width: 500px;
+	margin: 0 auto;
+}
