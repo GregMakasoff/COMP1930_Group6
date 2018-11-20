@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="styleWho.css" />
+<title>Who Are You?</title>
+    <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+    <script src="firebaseConnect.js"></script>
+</head>
+<body>
+<div>
+    <a href="HomePage.html">Home</a>
+</div>
+<h1>Step 1</h1>
+
+<h2>Are You A ....</h2>
+
+<div id="buttonContainer">
+    <a href = "Where_To_Go.html"><button class="button">Driver</button></a>
+   
+        <button class="button" onclick="addPassenger()">Passenger</button>
+</div>
+    
+    
+    <script>
+     
+    function addPassenger() {
+        
+            
+        firebase.auth().onAuthStateChanged(function(user){
+            var promise = firebase.database().ref("users/"+user.uid).update(
+                {
+              "passenger":true
+                
+                });
+            
+            promise.then(function(value) {
+			    console.log(value);
+			    window.location.href="Where_To_Go2.html";  
+			});
+        });  
+    };
+ 
+    </script>
+</body>
+</html>

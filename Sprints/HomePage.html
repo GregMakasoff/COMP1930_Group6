@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+
+<script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+<script src="firebaseConnect.js"></script>  
+    
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="style.css" />
+<title>Home Page</title>
+</head>
+<body>
+
+<h1>Let's Get Going!</h1>
+<h2>Campus Carpooling!</h2>
+
+<div id="homeImage">
+    <img src="carCar.png" width="250px" height="250px"/>
+</div>
+
+<div id="about">
+<h2>About Us</h2>
+<p>Let's Get Going is a “ride-share” site created for students, teachers,
+    and staff to safely connect with other people travelling to and from campus.</p>
+</div>
+    <h2>Please select one of the following:</h2>
+<div id="buttonContainer">
+    
+    <a href = "SignInFIREBASE.html"><button class="homeButton">Exiting User</button></a>
+    
+    
+
+    
+    <a href = "whoAreyou.html"><button id = "newUser" onclick="myFunction()" class="homeButton">New User</button></a>
+
+    
+    
+</div>
+    
+
+  <script>
+
+    firebase.auth().onAuthStateChanged(function(user){
+        firebase.database().ref("users/"+user.uid).set(
+		{
+        "name":user.displayName, 
+         
+        });
+    });
+      
+      /*
+       function myFunction() {
+			var promise1 = firebase.database().ref("Freaky/").update({
+				height: 3
+			});		    
+			promise1.then(function(value) {
+			    console.log(value);
+			    window.location.href="whoAreyou.html";  
+			});  
+       } */
+   </script>
+    
+
+   <script>
+       /*
+        function myFunction() {
+            
+           
+        
+           
+        var x = "check";
+        document.getElementById("demo").innerHTML = x;    
+            
+        var name = "citsaurus";
+        var height = 250;
+       
+        firebase.database().ref("dinosaurs/" + name).update({
+            height: 1000000
+            
+        });
+            
+             window.location.href="whoAreyou.html";
+            
+       
+            
+        } */
+    </script>
+    
+    
+</body>
+</html>

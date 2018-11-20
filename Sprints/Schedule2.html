@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="Schedule_style.css" />
+<title>Schedule</title>
+
+    <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+        <script src="firebaseConnect.js"></script>
+</head>
+<body>
+
+<h1>Step 4</h1>
+<h2>Please enter your schedule below.</h2>   
+    
+<div id="scheduleContainer">
+    <div>
+        <div style="margin-left: 115px;">Arrival</div> 
+        <div style="float: right; margin-top: -16px; margin-right: 35px;">Departure</div>    
+    </div>
+    <div id="weekdays">
+    <div style="margin-bottom: 10px;">Monday</div>
+    <div style="margin-bottom: 10px;">Tuesday</div>
+    <div style="margin-bottom: 10px;">Wednesday</div>
+    <div style="margin-bottom: 10px;">Thursday</div>
+    <div style="margin-bottom: 10px;">Friday</div>
+    <div style="margin-bottom: 10px;">Saturday</div>
+    <div>Sunday</div>
+    </div>
+    <div id="schedule">
+    <div><input type="time" id="MonArrive" name="schedule"
+       min="9:00" max="18:00" required><input type="time" id="MonDepart" name="schedule"
+       min="6:00" max="22:00" value="7:00" required></div>
+    <div><input type="time" id="schedule" name="schedule"
+       min="9:00" max="18:00" required><input type="time" id="schedule" name="schedule"
+       min="9:00" max="18:00" required></div>
+    <div><input type="time" id="schedule" name="schedule"
+       min="9:00" max="18:00" required><input type="time" id="schedule" name="schedule"
+       min="9:00" max="18:00" required></div>
+    <div><input type="time" id="schedule" name="schedule"
+       min="9:00" max="18:00" required><input type="time" id="schedule" name="schedule"
+       min="9:00" max="18:00" required></div>
+    <div><input type="time" id="schedule" name="schedule"
+       min="9:00" max="18:00" required><input type="time" id="schedule" name="schedule"
+       min="9:00" max="18:00" required></div>
+    <div><input type="time" id="schedule" name="schedule"
+       min="9:00" max="18:00" required><input type="time" id="schedule" name="schedule"
+       min="9:00" max="18:00" required></div>
+    <div><input type="time" id="schedule" name="schedule"
+       min="9:00" max="18:00" required><input type="time" id="schedule" name="schedule"
+       min="9:00" max="18:00" required></div>    
+    <input onclick="addSchedule()" type="submit" />   
+    </div>
+    
+     <a href = "ProfileCreate2.html"><button >Next</button></a>
+    
+    <script>
+        function addSchedule() {
+
+            firebase.auth().onAuthStateChanged(function(user) {
+                console.log(document.getElementById("MonArrive").value);
+                console.log(user.uid);
+                console.log(user.displayName);
+                var promise1 = firebase.database().ref("users/" + user.uid).update({
+                    "monArrive": document.getElementById("MonArrive").value
+                });
+                /*
+                promise1.then(function(value) {
+                    console.log(value);
+                    window.location.href = "ProfileCreate2.html";
+                });*/
+            });
+        };
+
+    </script>
+</div>
+</body>
+</html>

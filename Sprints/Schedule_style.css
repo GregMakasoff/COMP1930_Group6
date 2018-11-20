@@ -1,0 +1,37 @@
+p{
+	text-align: center;
+}
+h1{
+	text-align: center;
+	text-decoration: underline;
+	padding-top:1em;
+}
+h2{
+	text-align: center;
+}
+
+body{
+	background-color: beige;
+	font-family: monospace;
+}
+
+.homeButton{
+	border-radius: 5px;
+	border-width: 5px;
+	padding: 10px;
+	font-size: 25px;
+}
+#scheduleContainer{
+	width: 305px;
+	margin: 0 auto;
+}
+
+#weekdays {
+    width: 30%;
+    float: left;
+}
+
+#shedule {
+    width: 70%;
+    float: right;
+}

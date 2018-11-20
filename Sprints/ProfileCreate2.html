@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="styleProfile.css" />
+<title>Home Page</title>
+
+    <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+        <script src="firebaseConnect.js"></script>
+</head>
+<body>
+
+<h1>Step 5</h1>
+<h2>Create Your Profile</h2>
+
+    <div id = "left">
+        Please Input the Following Information:
+    <p><input type= "text" required placeholder="Username" pattern =""/></p>
+    <p><input type= "Password" required placeholder="Password" pattern =""/></p>
+    <p><input type= "text" required placeholder="First Name" pattern =""/></p>
+    <p><input type= "text" required placeholder="Last Name" pattern =""/></p>
+    <p><input type= "text" required placeholder="Middle Name" pattern =""/></p>
+    <p><input type= "text" required placeholder="Languages" pattern =""/></p>
+    <div id ="radio"> Gender: <br> <form>
+  <input id = "male?" type="radio" name="gender" value="male" checked> Male<br>
+  <input type="radio" name="gender" value="female"> Female<br>
+  <input type="radio" name="gender" value="other"> Other <br>
+  <input type="radio" name="gender" value="other"> Prefer Not to Say 
+        </form></div>
+    
+    <p>Date of Birth: <input type= "text" required placeholder="DD/MM/YYYY" pattern =""/></p>
+    <p>Contact Information: </p>   
+    <p><input type= "text" required placeholder="Email" pattern =""/></p>
+        <p><input type= "text" required placeholder="Phone Number" pattern =""/></p>
+    Bio:
+    <p><textarea placeholder="Optional" rows="8" cols="45"></textarea></p>
+       <button onclick = "addPersonalInfo()" >Next</button>
+    </div>
+    
+    
+    <div id = "right">
+        Profile Picture: 
+        <div id = "pic"></div>
+        
+    <button class="homeButton">Browse</button>
+    <button class="homeButton">Upload</button>
+        
+        <script>
+        function addPersonalInfo() {
+
+            firebase.auth().onAuthStateChanged(function(user) {
+                console.log(document.getElementById("male?").value);
+                console.log(user.uid);
+                console.log(user.displayName);
+                var promise1 = firebase.database().ref("users/" + user.uid).update({
+                    "monArrive": "yes?"
+                });
+                /*
+                promise1.then(function(value) {
+                    console.log(value);
+                    window.location.href = "ProfileCreate2.html";
+                });*/
+            });
+        };
+
+    </script>
+        
+        
+    </div>
+
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+p{
+	text-align: center;
+}
+h1{
+	text-align: center;
+	text-decoration: underline;
+	padding-top:1em;
+}
+h2{
+	text-align: center;
+}
+
+body{
+	background-color: beige;
+	font-family: monospace;
+}
+
+#textContainer{
+	width: 305px;
+	margin: 0 auto;
+}

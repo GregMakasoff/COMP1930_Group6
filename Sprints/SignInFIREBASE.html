@@ -1,0 +1,76 @@
+ <html>
+<head>
+   <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
+   <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
+  <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+<script src="firebaseConnect.js"></script>   
+
+</head>
+<body>
+
+   
+   <script>var ui = new firebaseui.auth.AuthUI(firebase.auth());</script>
+
+   <!-- The surrounding HTML is left untouched by FirebaseUI.
+    Your app may use that space for branding, controls and other customizations.-->
+   <h1>Sign In</h1>
+   <div id="firebaseui-auth-container"></div>
+   <div id="loader">Loading...</div>
+   
+
+   <script>var uiConfig = {
+     callbacks: {
+       signInSuccessWithAuthResult: function(authResult, redirectUrl) {
+         // User successfully signed in.
+         // Return type determines whether we continue the redirect automatically
+         // or whether we leave that to developer to handle.
+         return true;
+       },
+       uiShown: function() {
+         // The widget is rendered.
+         // Hide the loader.
+         document.getElementById('loader').style.display = 'none';
+       }
+     },
+     // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
+     signInFlow: 'popup',
+     signInSuccessUrl: 'HomePage.html',
+     signInOptions: [
+       // Leave the lines as is for the providers you want to offer your users.
+      
+       firebase.auth.EmailAuthProvider.PROVIDER_ID,
+       
+     ],
+     // Terms of service url.
+     tosUrl: 'main.html',
+     // Privacy policy url.
+     privacyPolicyUrl: 'main.html'
+   };</script>
+
+   
+   <script>
+        /* The start method will wait until the DOM is loaded. */
+       ui.start('#firebaseui-auth-container', uiConfig);</script>
+    
+    <script>
+    
+
+    //var firebase = app_firebase;
+        //console.log(Check);
+
+    // for the current user
+    // create this user node in the datebase
+
+    firebase.auth().onAuthStateChanged(function(user){
+        firebase.database().ref("users/"+user.uid).set(
+		{
+        "name":user.displayName, 
+         
+        });
+    });
+
+    </script>
+
+
+</body>
+</html>

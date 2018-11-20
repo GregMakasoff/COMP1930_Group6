@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="styleMatch.css" />
+<script src="matching.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+        <script src="firebaseConnect.js"></script>
+<title>List of Matches</title>
+</head>
+<body>
+     <div id = "home" ><a href = "HomePage.html">Home</a></div>
+    <div id = "home" ><a href = "ToDo.html">MyProfile</a></div>
+<div id="topContainer">
+    <div id="header">
+        <h1> Carpool Buddies</h1>
+    </div>
+    <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn">Sort By:</button>
+            <div id="myDropdown" class="dropdown-content">
+                <a href="">Gender</a>
+                <a href="">Age</a>
+                <a href="">Languages Spoken</a>
+            </div>
+    </div>
+</div>
+<div class="matchProfile">
+    <div class="profileImage">
+        <img/>
+    </div>
+    <div class="profileContent">
+        <h3>Name</h3>
+        <h3>Age</h3>
+        <h3>Gender</h3>
+        <h3>City, Province</h3>
+    </div>
+    <div class="contactButton">
+        <button class="contact">Contact</button>
+    </div>
+</div>
+<div class="matchProfile">
+     <div class="profileImage">
+        <img/>
+    </div>
+    <div class="profileContent">
+        <h3>Name</h3>
+        <h3>Age</h3>
+        <h3>Gender</h3>
+        <h3>City, Province</h3>
+    </div>
+    <div class="contactButton">
+        <button class="contact">Contact</button>
+    </div>
+</div>
+<div id = "buttonWrapper">
+<button id="show">Show More</button>
+</div>
+</body>
+</html>

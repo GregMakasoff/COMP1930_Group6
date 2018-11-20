@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="styleLocation.css" />
+        <title>Home Page</title>
+
+        <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+                <script src="firebaseConnect.js"></script>
+    </head>
+    <body>
+        <div id = "home" ><a href = "HomePage.html">Home</a></div>
+         <div id = "home" ><a href = "ToDo.html">MyProfile</a></div>
+        <h1>Step 3</h1>
+        <h2>Select Your City & Neighbourhood</h2>
+
+        <div id="homeImage">
+            <img src="carCar.png" width="250px" height="250px"/>
+        </div>
+
+        
+        <div id="wrap">
+        <div class="dropdown">
+            <button onclick="myFunction()" class="dropbtn">Your City</button>
+            <div id="myDropdown" class="dropdown-content">
+                <a href="#home">Vancouver</a>
+                <a href="#about">Surrey</a>
+                <a href="#contact">Richmond</a>
+                <a href="#contact">Coquitlam</a>
+                <a href="#contact">Port Coquitlam</a>
+                <a href="#contact">North Vancouver</a>
+                <a href="#contact">Burnaby</a>
+            </div>
+        </div>
+        
+         <div class="dropdown">
+            <button onclick="myFunction2()" class="dropbtn">Your Neighbourhood</button>
+            <div id="myDropdown2" class="dropdown-content">
+                <a href="#home">Whalley</a>
+                <a href="#about">Fleetwood</a>
+                <a href="#contact">South Surrey</a>
+            </div>
+        </div>
+        </div>
+         <a href = "Schedule2.html"><button >Next</button></a>
+        
+    </body>
+
+
+
+
+
+
+
+
+
+    <script>
+        /* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropbtn')) {
+
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+        
+    </script>
+</html>
